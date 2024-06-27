@@ -8,11 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.fooddelivery.Adapters.ImageSliderAdapter
+import com.example.fooddelivery.Adapters.PopularAdapter
+import com.example.fooddelivery.Models.PopularModel
 import java.util.ArrayList
 
 class HomeFragment : Fragment() {
@@ -20,9 +23,9 @@ class HomeFragment : Fragment() {
     private lateinit var adapter : ImageSliderAdapter
     private lateinit var handler: Handler
     private lateinit var imageList: ArrayList<Int>
-//    private lateinit var popularAdapter: PopularAdapter
-//    private lateinit var listPopular: ArrayList<PopularModel>
-//    private lateinit var homeRv: RecyclerView
+    private lateinit var popularAdapter: PopularAdapter
+    private lateinit var listPopular: ArrayList<PopularModel>
+    private lateinit var homeRv: RecyclerView
 //    private lateinit var goMenuText: TextView
 //    private lateinit var sharedModel: SharedModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +40,25 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         viewPager2=view.findViewById(R.id.imageSlider)
+
+        homeRv = view.findViewById(R.id.home_RV)
+
+        listPopular = ArrayList()
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "7$", 0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_sandwich, "Momo", "5$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_momo, "Burger", "9$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "7$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_sandwich, "Momo", "9$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_momo, "Burger", "5$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "7$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_sandwich, "Momo", "7$",0, 1))
+        listPopular.add(PopularModel(R.drawable.pop_menu_momo, "Burger", "5$",0, 1))
+
+        popularAdapter = PopularAdapter(requireContext(), listPopular)
+        //popularAdapter.setSharedModel(sharedModel)
+
+        homeRv.layoutManager = LinearLayoutManager(requireContext())
+        homeRv.adapter = popularAdapter
 
         return view
     }
