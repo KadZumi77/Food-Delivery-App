@@ -52,4 +52,6 @@ dependencies {
 
     //Testing navigarion
     androidTestImplementation("androidx.navigation:navigation-testing:2.7.0")
+
+    implementation("com.airbnb.android:lottie:3.4.0")
 }

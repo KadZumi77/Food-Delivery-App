@@ -5,14 +5,20 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fooddelivery.DetailsActivity
 
 import com.example.fooddelivery.Models.PopularModel
+import com.example.fooddelivery.Models.SharedModel
 
 import com.example.fooddelivery.databinding.HomeFoodItemBinding
 
 class PopularAdapter(val context: Context, var list: ArrayList<PopularModel>): RecyclerView.Adapter<PopularAdapter.PopularViewHolder>() {
 
+    private lateinit var sharedModel: SharedModel
 
+    fun setSharedModel(videoModel: SharedModel){
+        sharedModel = videoModel
+    }
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -29,7 +35,22 @@ class PopularAdapter(val context: Context, var list: ArrayList<PopularModel>): R
         holder.foodPrice.text = listModel.getFoodPrice().toString()
         listModel.getFoodImage()?.let { holder.foodImage.setImageResource(it) }
 
+        holder.item.setOnClickListener{
+            val intent = Intent(context, DetailsActivity::class.java)
+            intent.putExtra("foodImage", listModel.getFoodImage())
+            intent.putExtra("foodName", listModel.getFoodName())
+            context.startActivity(intent)
+        }
 
+        holder.addBtn.setOnClickListener {
+            if(sharedModel.inList(listModel)){
+                sharedModel.deleteFromCart(listModel)
+                holder.addBtn.setText("Add To Cart")
+            } else{
+                sharedModel.addToCart(listModel)
+                holder.addBtn.setText("Delete Cart")
+            }
+        }
     }
 
     override fun getItemCount(): Int {
