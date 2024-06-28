@@ -19,12 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Search" />
-    <item
-        android:id="@+id/history"
-        android:icon="@drawable/menu_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:title="History" />
+
     <item
         android:id="@+id/profile"
         android:icon="@drawable/menu_user"

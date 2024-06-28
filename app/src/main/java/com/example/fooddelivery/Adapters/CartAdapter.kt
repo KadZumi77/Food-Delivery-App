@@ -30,7 +30,7 @@ class CartAdapter(val context: Context, var list: ArrayList<PopularModel>): Recy
                 val count =  listModel.getFoodCount() + 1
                 listModel.setFoodCount(count)
                 val price = listModel.getFoodPriceConstant() * listModel.getFoodCount()
-                listModel.setFoodPrice(price.toString())
+                listModel.setFoodPrice(price)
                 holder.foodPrice.text = listModel.getFoodPrice().toString()
                 holder.foodCount.text = listModel.getFoodCount().toString()
             }
@@ -43,7 +43,7 @@ class CartAdapter(val context: Context, var list: ArrayList<PopularModel>): Recy
                 val count = listModel.getFoodCount() - 1
                 listModel.setFoodCount(count)
                 val price = listModel.getFoodPriceConstant() * listModel.getFoodCount()
-                listModel.setFoodPrice(price.toString())
+                listModel.setFoodPrice(price)
                 holder.foodPrice.text = listModel.getFoodPrice().toString()
                 holder.foodCount.text = listModel.getFoodCount().toString()
             }

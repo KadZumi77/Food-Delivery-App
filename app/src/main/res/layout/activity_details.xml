@@ -108,28 +108,25 @@
         app:layout_constraintStart_toStartOf="@+id/short_description_of_food"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/green_btn"
-        android:elevation="4dp"
-        android:fontFamily="@font/yeonsung"
-        android:outlineAmbientShadowColor="@color/startGreenColor"
-        android:outlineSpotShadowColor="@color/startGreenColor"
-        android:shadowColor="@color/startGreenColor"
-        android:text="Add To Cart"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_d_food_ingredients" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/home_food_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add To Cart"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:background="@drawable/green_btn"-->
+<!--        android:padding="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/menu_d_food_ingredients" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

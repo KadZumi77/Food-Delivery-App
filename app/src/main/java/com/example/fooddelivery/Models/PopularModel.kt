@@ -4,12 +4,12 @@ class PopularModel {
 
     private  var foodImage: Int? = null
     private var foodName: String = ""
-    private var foodPrice: String = ""
+    private var foodPrice: Int = 0
     private var foodPriceConstant: Int = 1
     private var foodCount: Int = 1
 
     constructor()
-    constructor(foodImage: Int?, foodName: String, foodPrice: String,  foodPriceConstant: Int, foodCount: Int) {
+    constructor(foodImage: Int?, foodName: String, foodPrice: Int,  foodPriceConstant: Int, foodCount: Int) {
         this.foodImage = foodImage
         this.foodName = foodName
         this.foodPrice = foodPrice
@@ -41,7 +41,7 @@ class PopularModel {
         return foodName
     }
 
-    fun getFoodPrice(): String{
+    fun getFoodPrice(): Int{
         return foodPrice
     }
 
@@ -53,7 +53,7 @@ class PopularModel {
         this.foodName = foodName
     }
 
-    fun setFoodPrice(foodPrice: String){
+    fun setFoodPrice(foodPrice: Int){
         this.foodPrice = foodPrice
     }
 }

@@ -21,6 +21,7 @@ class DetailsActivity : AppCompatActivity() {
         binding.menuDFoodImage.setImageResource(foodImage)
         binding.menuDetailsFoodName.text = foodName
 
+
         binding.backHome.setOnClickListener{
             finish()
         }
